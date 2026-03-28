@@ -20,8 +20,8 @@ const APPS_DATA = [
       rating: 4.8,
       downloads: '10+',
       imageUrl: 'https://plus.unsplash.com/premium_photo-1663127489224-47dfd0639f54?w=400',
-      UrlApp: 'Mi_Tasa_Binance/index.html',
-      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dolar.tasa_binance',
+      UrlApp: 'Construccion/index.html',
+      playStoreUrl: 'Construccion/index.html',
       tags: ['Libros', 'Religión', 'Oración']
     },
     {
