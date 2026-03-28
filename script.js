@@ -23,6 +23,18 @@ const APPS_DATA = [
       UrlApp: 'Mi_Tasa_Binance/index.html',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.dolar.tasa_binance',
       tags: ['Libros', 'Religión', 'Oración']
+    },
+    {
+      id: '3',
+      name: 'SarcasIA',
+      shortDescription: '🎭 El mejor repertorio de indirectas, frases y generaciones IA para compartir.',
+      category: 'Entretenimiento',
+      rating: 4.8,
+      downloads: '10+',
+      imageUrl: 'img/img3.png',
+      UrlApp: 'SarcasIA/index.html',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.indirectas.frases_imagenes_IA',
+      tags: ['Indirectas', 'Humor Negro', 'Frases']
     }
   ];
   
@@ -92,15 +104,17 @@ const APPS_DATA = [
       
       gridElement.innerHTML = filteredApps.map(app => `
         <div class="glass-card rounded-2xl overflow-hidden hover:transform hover:scale-[1.02] transition-all duration-300 shadow-xl group animate-fade-in-up">
-          <div class="relative h-48 overflow-hidden">           
-            <img 
-                src="${app.imageUrl}" 
-                alt="${app.name}" 
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                loading="lazy"
-              />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
-            <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+          <div class="relative h-48 overflow-hidden">
+            <a href="${app.UrlApp}">
+              <img
+                  src="${app.imageUrl}"
+                  alt="${app.name}"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+            </a>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60 pointer-events-none"></div>
+            <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
                  <span class="px-2 py-1 bg-primary-600/90 rounded text-xs font-semibold text-white backdrop-blur-sm">
                     ${app.category}
                  </span>
@@ -126,10 +140,10 @@ const APPS_DATA = [
 
             <div class="flex justify-between ">
               <i  class="w-3 h-3 text-yellow-400 fill-yellow-400 mr-1"></i>
-              <a href="${app.UrlApp}" class="inline-flex items-center text-sm font-semibold text-primary-400 hover:text-primary-300 transition-colors cursor-pointer" > 
+              <a href="${app.UrlApp}" class="inline-flex items-center text-sm font-semibold text-slate-400 hover:text-slate-300 transition-colors cursor-pointer" >
                   + Detalles...
                   </a>
-            </div>            
+            </div>
             
             <div class="flex flex-wrap gap-2 mb-6">
                 ${app.tags.slice(0, 3).map(tag => `
